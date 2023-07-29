@@ -1,0 +1,1 @@
+INSERT INTO categories (code, value, header, subheader, createdAt, updatedAt) VALUES ("NCT", "Nhà cho thuê","Cho Thuê Nhà Nguyên Căn, Giá Rẻ, Chính Chủ, Mới Nhất 2022", "Cho thuê nhà nguyên căn - Kênh đăng tin cho thuê nhà số 1: giá rẻ, chính chủ, miễn trung gian, đầy đủ tiện nghi, mức giá, diện tích cho thuê khác nhau.", current_timestamp, current_timestamp);

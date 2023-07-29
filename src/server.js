@@ -5,6 +5,7 @@ import userRouter from "./route/user";
 import postRouter from "./route/post";
 import postValue from "./route/postValue";
 import insertData from "./route/insertData";
+import connectDb from "./config/connectDb";
 
 
 
@@ -20,6 +21,7 @@ userRouter(app)
 postRouter(app)
 postValue(app)
 insertData(app)
+connectDb()
 
 
 

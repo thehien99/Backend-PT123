@@ -3,7 +3,7 @@ import dataInsert from '../services/dataInsert'
 //insert
 const insertData = async (req, res) => {
   try {
-    let data = await dataInsert.createPriceandAcrea()
+    let data = await dataInsert.insert()
     return res.status(200).json(data)
   } catch (error) {
     return res.status(400).json({

@@ -1,0 +1,2 @@
+### Insert area and price
+POST http://localhost:8081/insert/
