@@ -2,7 +2,7 @@ import db from "../models";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { v4 } from "uuid";
-require("dotenv").config();
+require('dotenv').config()
 
 const hashPassword = (password) =>
   bcrypt.hashSync(password, bcrypt.genSaltSync(12));
@@ -45,14 +45,12 @@ export const loginService = ({ phone, password }) =>
         where: { phone },
         raw: true,
       });
-      const isCorrectPassword =
-        response && bcrypt.compareSync(password, response.password);
-      const token =
-        isCorrectPassword &&
+      const isCorrectPassword = response && bcrypt.compareSync(password, response.password);
+      const token = isCorrectPassword &&
         jwt.sign(
           { id: response.id, phone: response.phone },
           process.env.ACCESS_TOKKEN_SECRET,
-          { expiresIn:'1d' }
+          { expiresIn: '1d' }
         );
       resolve({
         err: token ? 0 : 2,

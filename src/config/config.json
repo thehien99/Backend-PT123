@@ -5,6 +5,7 @@
     "database": "db_phongtro123_abqw",
     "host": "dpg-cj1nmmmnqqla1dhsqr20-a.singapore-postgres.render.com",
     "dialect": "postgres",
+    "logging": false,
     "dialectOptions": {
       "ssl": {
         "require": true,
@@ -18,6 +19,7 @@
     "database": "db_phongtro123_abqw",
     "host": "dpg-cj1nmmmnqqla1dhsqr20-a.singapore-postgres.render.com",
     "dialect": "postgres",
+    "logging": false,
     "dialectOptions": {
       "ssl": {
         "require": true,
