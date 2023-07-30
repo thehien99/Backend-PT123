@@ -12,7 +12,7 @@ import connectDb from "./config/connectDb";
 require('dotenv').config();
 let app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL }))
+app.use(cors({ origin: true }))
 //config app
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
