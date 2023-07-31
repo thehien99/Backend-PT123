@@ -20,7 +20,7 @@ const databody = [
     body: chothuephongtro.body,
     code: "CTPT",
   },
-  { body: nhachothue.body, code: "NCT" },
+  { body: nhachothue.body, code: "CTN" },
 ];
 
 const categories = [
@@ -43,8 +43,8 @@ const categories = [
     subheader: "Cho thuê phòng trọ - Kênh thông tin số 1 về phòng trọ giá rẻ, phòng trọ sinh viên, phòng trọ cao cấp mới nhất năm 2022. Tất cả nhà trọ cho thuê giá tốt nhất tại Việt Nam."
   },
   {
-    code: "NCT",
-    value: "Nhà cho thuê",
+    code: "CTN",
+    value: "Cho thuê nhà",
     header: "Cho Thuê Nhà Nguyên Căn, Giá Rẻ, Chính Chủ, Mới Nhất 2022",
     subheader: "Cho thuê nhà nguyên căn - Kênh đăng tin cho thuê nhà số 1: giá rẻ, chính chủ, miễn trung gian, đầy đủ tiện nghi, mức giá, diện tích cho thuê khác nhau."
   },
@@ -164,15 +164,6 @@ const insert = () =>
       labelCodes?.forEach(async (item) => {
         await db.Label.create(item);
       });
-      resolve("Done");
-    } catch (error) {
-      reject(error);
-    }
-  });
-
-const createPriceandAcrea = () => {
-  return new Promise((resolve, reject) => {
-    try {
       dataPrice.forEach(async (item, index) => {
         await db.Price.create({
           order: index + 1,
@@ -187,13 +178,13 @@ const createPriceandAcrea = () => {
           value: item.value,
         });
       });
-      resolve("ok");
+      resolve("Done");
     } catch (error) {
       reject(error);
     }
   });
-};
+
+
 module.exports = {
   insert: insert,
-  createPriceandAcrea: createPriceandAcrea,
 };
