@@ -4,6 +4,7 @@ import { v4 } from "uuid";
 import moment from 'moment';
 import generateCode from "../untils/generateCode";
 import generaDate from "../untils/generateDate";
+require('dotenv').config()
 
 const getAllPost = () => {
   return new Promise(async (resolve, reject) => {
@@ -48,11 +49,10 @@ const getPostLimit = (params, { limitPost, order, ...query }, { priceNumber, are
       if (areaNumber) query.areaNumber = { [Op.between]: areaNumber };
       if (order) queries.order = [order];
       const response = await db.Post.findAndCountAll({
-        where: query,
+        where: queries,
         raw: true,
         offset: page * limit,
         nest: true,
-        ...queries,
         include: [
           { model: db.Image, as: "images", attributes: ["image"] },
           {

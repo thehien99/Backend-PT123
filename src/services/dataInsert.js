@@ -8,6 +8,7 @@ import { v4 } from "uuid";
 import bcrypt from "bcryptjs";
 import { dataArea, dataPrice } from "../untils/data";
 import { getNumberFromString, getNumberFromStringV2 } from "../untils/common";
+require('dotenv').config()
 
 const databody = [
   { body: chothuecanho.body, code: "CTCH" },
