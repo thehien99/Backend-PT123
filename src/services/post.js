@@ -43,7 +43,7 @@ const getPostLimit = (params, { limitPost, order, ...query }, { priceNumber, are
     try {
       let page = (!params || +params <= 1) ? 0 : (+params - 1);
       let queries = { ...query };
-      let limit = +limitPost || +process.env.LIMIT
+      let limit = +limitPost || 5
       queries.limit = limit
       if (priceNumber) query.priceNumber = { [Op.between]: priceNumber };
       if (areaNumber) query.areaNumber = { [Op.between]: areaNumber };
@@ -53,6 +53,7 @@ const getPostLimit = (params, { limitPost, order, ...query }, { priceNumber, are
         raw: true,
         offset: page * limit,
         nest: true,
+        ...queries,
         include: [
           { model: db.Image, as: "images", attributes: ["image"] },
           {
