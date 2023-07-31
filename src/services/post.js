@@ -43,7 +43,7 @@ const getPostLimit = (params, { limitPost, order, ...query }, { priceNumber, are
     try {
       let page = (!params || +params <= 1) ? 0 : (+params - 1);
       let queries = { ...query };
-      let limit = +limitPost || 5
+      let limit = +limitPost || +process.env.LIMIT
       queries.limit = limit
       if (priceNumber) query.priceNumber = { [Op.between]: priceNumber };
       if (areaNumber) query.areaNumber = { [Op.between]: areaNumber };
@@ -91,7 +91,7 @@ const getNewPost = () => {
         nest: true,
         offset: 0,
         order: [["createdAt", "DESC"]],
-        limit: 5,
+        limit: +process.env.LIMIT,
         include: [
           { model: db.Image, as: "images", attributes: ["image"] },
           {
@@ -131,7 +131,7 @@ const createNewPost = (body) => new Promise(async (resolve, reject) => {
       address: body.address,
       attributesId,
       categoryCode: body.categoryCode,
-      description: JSON.stringify(body.description?.split(/[.]/)) || null,
+      description: JSON.stringify(body.description) || null,
       userId: body.userID,
       overviewId,
       imagesId,
