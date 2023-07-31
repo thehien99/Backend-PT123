@@ -91,7 +91,7 @@ const getNewPost = () => {
         nest: true,
         offset: 0,
         order: [["createdAt", "DESC"]],
-        limit: +process.env.LIMIT,
+        limit: 5,
         include: [
           { model: db.Image, as: "images", attributes: ["image"] },
           {
