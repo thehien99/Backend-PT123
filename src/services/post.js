@@ -49,7 +49,7 @@ const getPostLimit = (params, { limitPost, order, ...query }, { priceNumber, are
       if (areaNumber) query.areaNumber = { [Op.between]: areaNumber };
       if (order) queries.order = [order];
       const response = await db.Post.findAndCountAll({
-        where: queries,
+        where: query,
         raw: true,
         offset: page * limit,
         nest: true,
