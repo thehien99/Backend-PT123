@@ -131,7 +131,7 @@ const createNewPost = (body) => new Promise(async (resolve, reject) => {
       address: body.address,
       attributesId,
       categoryCode: body.categoryCode,
-      description: JSON.stringify(body.description) || null,
+      description: JSON.stringify(body.description?.split(".")) || null,
       userId: body.userID,
       overviewId,
       imagesId,
