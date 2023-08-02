@@ -11,7 +11,7 @@ const generateCode = (value) => {
   let length = merge.length
   // adc + phongtro123 = adcphongtro123
   for (let i = 0; i < 3; i++) {
-    let index = i === 2 ? Math.floor(merge.length / 2 + length / 2) : Math.floor(length / 2)
+    let index = i === 2 ? Math.floor(merge.length / 1.8 + length / 1.8) : Math.floor(length / 1.8)
     output += merge.charAt(index)
     length = index
   }
