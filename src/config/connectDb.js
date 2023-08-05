@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
-const sequelize = new Sequelize("db_phongtro123_abqw", "db_phongtro123_abqw_user", "H8N9wOYlvFjzFl0Tlte6sKE4FdNU0kB3", {
-  host: "dpg-cj1nmmmnqqla1dhsqr20-a.singapore-postgres.render.com",
+const sequelize = new Sequelize("phongtro_mfqc", "phongtro_mfqc_user", "zkMJrToIfbziq5GO8XFHdeshTJ9GWcAq", {
+  host: "dpg-cj6tj0ljeehc73bslnu0-a.singapore-postgres.render.com",
   dialect: "postgres",
   logging: false,
   dialectOptions: {
