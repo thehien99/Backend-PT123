@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "danghien_api",
-    "password": "Mxyz7Kx8QOopZaiVjQeuitfznnIspLxy",
-    "database": "db_phongtro_znuz",
-    "host": "dpg-cj6uqfk5kgrc73ekmntg-a.singapore-postgres.render.com",
+    "username": "danghien_phongtro123_user",
+    "password": "wi3X4u41BqXwWSIQxE6vdO9J23NqJo4j",
+    "database": "danghien_phongtro123",
+    "host": "dpg-cl3lt20t3kic73ddpa0g-a.singapore-postgres.render.com",
     "dialect": "postgres",
     "logging": false,
     "dialectOptions": {
@@ -14,10 +14,10 @@
     }
   },
   "production": {
-    "username": "danghien_api",
-    "password": "Mxyz7Kx8QOopZaiVjQeuitfznnIspLxy",
-    "database": "db_phongtro_znuz",
-    "host": "dpg-cj6uqfk5kgrc73ekmntg-a.singapore-postgres.render.com",
+    "username": "danghien_phongtro123_user",
+    "password": "wi3X4u41BqXwWSIQxE6vdO9J23NqJo4j",
+    "database": "danghien_phongtro123",
+    "host": "dpg-cl3lt20t3kic73ddpa0g-a.singapore-postgres.render.com",
     "dialect": "postgres",
     "logging": false,
     "dialectOptions": {
