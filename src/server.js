@@ -7,8 +7,6 @@ import postValue from "./route/postValue";
 import insertData from "./route/insertData";
 import connectDb from "./config/connectDb";
 
-
-
 require('dotenv').config();
 let app = express();
 
