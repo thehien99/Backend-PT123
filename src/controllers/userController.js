@@ -53,9 +53,19 @@ const updateUser = async (req, res) => {
     console.log(error)
   }
 }
+
+const refreshtoken = async (req, res) => {
+  const refreshtoken = req.cookies.refreshtoken
+  try {
+
+  } catch (error) {
+
+  }
+}
 module.exports = {
   login: login,
   register: register,
   getOneUser: getOneUser,
-  updateUser: updateUser
+  updateUser: updateUser,
+  refreshtoken: refreshtoken
 };

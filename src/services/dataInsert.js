@@ -11,7 +11,10 @@ import { getNumberFromString, getNumberFromStringV2 } from "../untils/common";
 require('dotenv').config()
 
 const databody = [
-  { body: chothuecanho.body, code: "CTCH" },
+  {
+    body: chothuecanho.body,
+    code: "CTCH"
+  },
   {
     body: chothuematbang.body,
     code: "CTMB",
@@ -74,9 +77,12 @@ const insert = () =>
               code: labelCode,
               value: item?.header?.class?.classType?.trim(),
             });
+
+
           let provinceCode = generateCode(
             item?.header?.address?.split(",")?.slice(-1)[0]
           ).trim();
+
           provinceCodes?.every((item) => item?.code !== provinceCode) &&
             provinceCodes.push({
               code: provinceCode,

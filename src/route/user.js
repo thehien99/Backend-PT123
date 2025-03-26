@@ -8,6 +8,7 @@ let userRouter = (app) => {
   router.post("/api/register", userController.register)
   router.get("/getuser", verifyToken, userController.getOneUser)
   router.put("/updateuser", verifyToken, userController.updateUser)
+  router.post('/refreshtoken', verifyToken, userController.refreshtoken)
   return app.use("/", router);
 }
 export default userRouter

@@ -18,6 +18,7 @@ let postValue = (app) => {
 
   //Province
   router.get("/province", provinceController.getProvince);
+
   return app.use("/", router)
 }
 export default postValue
