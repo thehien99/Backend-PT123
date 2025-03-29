@@ -11,7 +11,7 @@ require('dotenv').config();
 let app = express();
 
 app.use(cors({
-  origin: 'https://danghien-phongtro.vercel.app', // Cho phép từ nguồn cụ thể
+  origin: process.env.NODE_ENV === 'production' ? process.env.FRONTEND_URL : '*', // Cho phép từ nguồn cụ thể
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Các phương thức hợp lệ
   allowedHeaders: ['Content-Type', 'Authorization'], // Các header hợp lệ
 }));
