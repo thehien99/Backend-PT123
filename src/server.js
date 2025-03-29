@@ -10,7 +10,11 @@ import connectDb from "./config/connectDb";
 require('dotenv').config();
 let app = express();
 
-app.use(cors({ origin: 'https://danghien-phongtro.vercel.app' }))
+app.use(cors({
+  origin: 'https://danghien-phongtro.vercel.app', // Cho phép từ nguồn cụ thể
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Các phương thức hợp lệ
+  allowedHeaders: ['Content-Type', 'Authorization'], // Các header hợp lệ
+}));
 //config app
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
