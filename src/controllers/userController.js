@@ -28,7 +28,7 @@ const login = async (req, res) => {
     const response = await authService.loginService(req.body);
     res.cookie('refreshToken', response.refreshToken, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production', // Chỉ bật Secure khi chạy production
+      secure: true, // Chỉ bật Secure khi chạy production
       sameSite: 'Lax', // Hoặc 'None' nếu cần dùng cross-site
       maxAge: 7 * 24 * 60 * 60 * 1000, // Thời hạn cookie (7 ngày)
     })
