@@ -27,11 +27,12 @@ const login = async (req, res) => {
       });
     const response = await authService.loginService(req.body);
     res.cookie('refreshToken', response.refreshToken, {
-      httpOnly: true,
-      secure: true, // Chỉ bật Secure khi chạy production
-      sameSite: 'Lax', // Hoặc 'None' nếu cần dùng cross-site
-      maxAge: 7 * 24 * 60 * 60 * 1000, // Thời hạn cookie (7 ngày)
-    })
+      httpOnly: true,           // Cookie chỉ có thể truy cập qua HTTP request
+      secure: process.env.NODE_ENV === 'production', // Chỉ bật Secure khi chạy production với HTTPS
+      sameSite: 'Lax',          // Hoặc 'Strict', 'None' tùy vào yêu cầu của bạn
+      maxAge: 7 * 24 * 60 * 60 * 1000, // Cookie tồn tại trong 7 ngày
+    });
+
     return res.status(200).json(response);
   } catch (error) {
     return res.status(500).json({

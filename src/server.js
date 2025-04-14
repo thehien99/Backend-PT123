@@ -15,7 +15,7 @@ app.use(cors({
   origin: process.env.NODE_ENV === 'production' ? process.env.FRONTEND_URL : '*', // Cho phép từ nguồn cụ thể
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Các phương thức hợp lệ
   allowedHeaders: ['Content-Type', 'Authorization'], // Các header hợp lệ
-  credentials: true, // Cho phép gửi cookie
+  credentials: true,  // Cho phép gửi cookie từ frontend
 }));
 
 // const corsOptions = {
