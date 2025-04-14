@@ -20,11 +20,12 @@ export const registerService = ({ phone, password, name }) =>
           id: v4(),
         },
       });
-      const accessToken = response[1] && generateAccessToken(response[0].id)
-      const refreshToken = accessToken && generateRefreshToken(response[0].id)
+      const res = response[0].dataValues
+      const accessToken = res && generateAccessToken(res.id)
+      const refreshToken = accessToken && generateRefreshToken(res.id)
       resolve({
-        err: token ? 0 : 2,
-        msg: token
+        err: accessToken ? 0 : 2,
+        msg: accessToken
           ? "Register is successfully !"
           : "Phone number has been aldready used !",
         accessToken,
