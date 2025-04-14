@@ -11,19 +11,19 @@ import cookieParser from 'cookie-parser'
 require('dotenv').config();
 let app = express();
 
-app.use(cors({
-  origin: process.env.NODE_ENV === 'production' ? process.env.FRONTEND_URL : '*', // Cho phép từ nguồn cụ thể
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Các phương thức hợp lệ
-  allowedHeaders: ['Content-Type', 'Authorization'], // Các header hợp lệ
-  credentials: true,  // Cho phép gửi cookie từ frontend
-}));
+// app.use(cors({
+//   origin: process.env.NODE_ENV === 'production' ? process.env.FRONTEND_URL : '*', // Cho phép từ nguồn cụ thể
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Các phương thức hợp lệ
+//   allowedHeaders: ['Content-Type', 'Authorization'], // Các header hợp lệ
+//   credentials: true,  // Cho phép gửi cookie từ frontend
+// }));
 
-// const corsOptions = {
-//   origin: 'http://localhost:5173', // Địa chỉ frontend của bạn
-//   credentials: true, // Cho phép cookies
-// };
+const corsOptions = {
+  origin: 'http://localhost:5173', // Địa chỉ frontend của bạn
+  credentials: true, // Cho phép cookies
+};
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 
 //config app
